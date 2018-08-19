@@ -1,3 +1,8 @@
+/*
+Sniperkit-Bot
+- Status: analyzed
+*/
+
 package git
 
 import (
@@ -10,14 +15,14 @@ import (
 
 	"github.com/chrislusf/gleam/gio"
 	"github.com/chrislusf/gleam/util"
-	"github.com/eiso/go-engine/readers"
-	"github.com/pkg/errors"
-
 	sivafs "github.com/eiso/go-billy-siva"
+	"github.com/pkg/errors"
 	"gopkg.in/src-d/go-billy.v4/memfs"
 	"gopkg.in/src-d/go-billy.v4/osfs"
 	git "gopkg.in/src-d/go-git.v4"
 	"gopkg.in/src-d/go-git.v4/storage/filesystem"
+
+	"github.com/sniperkit/snk.fork.go-engine/readers"
 )
 
 var regMapperReadShard = gio.RegisterMapper(newReadShard)

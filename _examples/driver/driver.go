@@ -1,3 +1,8 @@
+/*
+Sniperkit-Bot
+- Status: analyzed
+*/
+
 package main
 
 import (
@@ -5,6 +10,8 @@ import (
 	"flag"
 	"fmt"
 	"log"
+	"net/http"
+	_ "net/http/pprof"
 	"os"
 	"time"
 
@@ -13,11 +20,8 @@ import (
 	"github.com/chrislusf/gleam/gio"
 	enry "gopkg.in/src-d/enry.v1"
 
-	engine "github.com/eiso/go-engine"
-	"github.com/eiso/go-engine/utils"
-
-	"net/http"
-	_ "net/http/pprof"
+	engine "github.com/sniperkit/snk.fork.go-engine"
+	"github.com/sniperkit/snk.fork.go-engine/utils"
 )
 
 func main() {
@@ -105,18 +109,18 @@ func queryExample(path, query string, partitions int) (*flow.Dataset, []flow.Flo
 	case "mostUsedLanguages":
 		numberOfLangs := 10
 		fmt.Printf(">>> %d most used languages:\n", numberOfLangs)
-    
-    		p = f.Read(engine.Repositories(path, partitions).
+
+		p = f.Read(engine.Repositories(path, partitions).
 			References().
 			Commits().
-			Trees().	
-      			Blobs().
+			Trees().
+			Blobs().
 			WithHeaders()).
 			Map("classify languages", getLanguagesFromBlobs).
 			GroupBy("group by lang", flow.Field(1)).
 			Map("group count", countGroups).
 			Top("top", numberOfLangs, flow.OrderBy(2, false))
-		
+
 	case "repositories":
 		p = f.Read(engine.Repositories(path, partitions))
 	case "references":

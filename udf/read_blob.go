@@ -1,3 +1,8 @@
+/*
+Sniperkit-Bot
+- Status: analyzed
+*/
+
 package udf
 
 import (
@@ -5,7 +10,6 @@ import (
 
 	"github.com/chrislusf/gleam/gio"
 	"github.com/pkg/errors"
-
 	gogit "gopkg.in/src-d/go-git.v4"
 	"gopkg.in/src-d/go-git.v4/plumbing"
 )

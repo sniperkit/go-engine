@@ -1,6 +1,13 @@
+/*
+Sniperkit-Bot
+- Status: analyzed
+*/
+
 package utils
 
-import "github.com/chrislusf/gleam/gio"
+import (
+	"github.com/chrislusf/gleam/gio"
+)
 
 // ColumnToKey moves the column i to be the index
 func ColumnToKey(i int) gio.Mapper {

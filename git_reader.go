@@ -1,11 +1,17 @@
+/*
+Sniperkit-Bot
+- Status: analyzed
+*/
+
 package git
 
 import (
 	"fmt"
 
 	"github.com/chrislusf/gleam/util"
-	"github.com/eiso/go-engine/readers"
 	git "gopkg.in/src-d/go-git.v4"
+
+	"github.com/sniperkit/snk.fork.go-engine/readers"
 )
 
 func Repositories(path string, partitionCount int) *sourceRepositories {
